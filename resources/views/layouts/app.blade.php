@@ -35,9 +35,9 @@
         <a class="p-2 text-dark" href="{{ url('/sales') }}">Ventas</a>
         <a class="p-2 text-dark" href="{{ url('/reports') }}">Reportes</a> 
                         @guest
-                                <a class="p-2 text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <!--a class="p-2 text-dark" href="{{ route('login') }}">{{ __('Login') }}</a-->
                             @if (Route::has('register'))
-                                    <a class="p-2 text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <!--a class="p-2 text-dark" href="{{ route('register') }}">{{ __('Register') }}</a-->
                             @endif
                         @else
                                 <a id="navbarDropdown" class="p-2 text-dark" href="#" role="button">

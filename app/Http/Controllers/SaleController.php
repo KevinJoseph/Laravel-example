@@ -27,7 +27,7 @@ class SaleController extends Controller
 
         $f = Sale::max('datetime');
         $f = (string) $f;
-        $value = substr($f, 0, -9);  // devuelve "cde"
+        $value = substr($f, 0, -9);  // devuelve date
 
         $allSales = DB::table('sales')
         ->join('foods', 'foods.id', '=', 'sales.food_id')

@@ -46,7 +46,6 @@
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">index</th>  
                         <th scope="col">Fecha</th>
                         <th scope="col">Total</th>
                         <th scope="col">Acciones</th>         
@@ -55,7 +54,6 @@
                 <tbody>
                     <tr v-for="(investment, index) in investments" v-bind:key="index">
                         <td>{{investment.id }}</td>
-                        <td>{{index}}</td>
                         <td>{{investment.date}}</td>
                         <td>{{investment.total}}</td>
                         <td>

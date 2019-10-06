@@ -49,7 +49,6 @@
                 <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">index</th>
                         <th scope="col">Nombre</th>  
                         <th scope="col">Precio</th>
                         <th scope="col">Categoria</th>
@@ -59,7 +58,6 @@
                 <tbody>
                     <tr v-for="(food, index) in foods" v-bind:key="index">
                         <td>{{food.id }}</td>
-                        <td>{{index}}</td>
                         <td>{{food.name}}</td>
                         <td>{{food.price}}</td>
                         <td>{{food.category}}</td>

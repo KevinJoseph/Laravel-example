@@ -81,6 +81,10 @@
             axios.get('foods').then((response) => {
                 this.foods = response.data;
             });
+            axios.get('indexsales').then((response) => {
+                this.sales = response.data;
+                  console.log(this.sales);
+            });
         },
         data() {
             return{
