@@ -4,17 +4,16 @@
         <section class="form">
               <form @submit.prevent="editInvestment(investment)" v-if="modoEditar">
                 <h3>Editar Inversión</h3>
-                <div class="form-group row">
-                <label for="example-date-input" class="col-2 col-form-label">Fecha</label>
-                <div class="col-5">
+                <div class="form-group">
+                <label for="example-date-input">Fecha</label>
+                
                     <input class="form-control" type="date" id="example-date-input" v-model="investment.date">
+              
                 </div>
-                </div>
-               <div class="form-group row">
-                    <label for="Total" class="col-2 col-form-label">Total</label>
-                    <div class="col-5">
+               <div class="form-group">
+
                     <input type="text" class="form-control mb-2" placeholder="00.00" v-model="investment.total">
-                    </div>
+
                 </div>
                 <button class="btn btn-success" type="submit">Guardar</button>
                 <button class="btn btn-default" type="submit" 
@@ -22,17 +21,15 @@
                 </form>
                 <form @submit.prevent="addInvestment" v-else>
                 
-                <div class="form-group row">
-                <label for="example-date-input" class="col-2 col-form-label">Fecha</label>
-                <div class="col-5">
+                <div class="form-group">
+                <label for="example-date-input">Fecha</label>
                     <input class="form-control" type="date" id="example-date-input" v-model="investment.date">
                 </div>
-                </div>
-                <div class="form-group row">
-                    <label for="Total" class="col-2 col-form-label">Total</label>
-                    <div class="col-5">
+                <div class="form-group">
+                    <label for="Total">Total</label>
+                    
                     <input type="text" class="form-control mb-2" placeholder="00.00" v-model="investment.total">
-                    </div>
+                
                 </div>
                 <button class="btn btn-primary" type="submit">Agregar</button>
                 </form>
