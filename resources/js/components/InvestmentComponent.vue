@@ -21,11 +21,11 @@
                     @click="cancelarEdicion">Cancelar</button>
                 </form>
                 <form @submit.prevent="addInvestment" v-else>
-               
+                
                 <div class="form-group row">
                 <label for="example-date-input" class="col-2 col-form-label">Fecha</label>
                 <div class="col-5">
-                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input" v-model="investment.date">
+                    <input class="form-control" type="date" id="example-date-input" v-model="investment.date">
                 </div>
                 </div>
                 <div class="form-group row">
@@ -35,7 +35,6 @@
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Agregar</button>
-                
                 </form>
         </section>
         <!-- Tabla donde se muestran los datos -->
