@@ -29,9 +29,9 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Platos</label>
-                    <select class="form-control" v-model="sale.food_id" v-on:click="addPrice(sale.food_id)">
+                    <select class="form-control" v-model="sale.food_id" @change="addPrice(sale.food_id)">
                         <option>Seleccionar un Plato</option>    
-                        <option v-for="(food,index) in foods" v-bind:key="index" v-on:click="addPrice(sale.food_id)" :value="food.id" >{{food.name}}</option>
+                        <option v-for="(food,index) in foods" v-bind:key="index" @change="addPrice(sale.food_id)" :value="food.id" >{{food.name}}</option>
                     </select>  
                 </div>
                 <div class="form-group">
