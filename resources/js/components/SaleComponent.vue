@@ -61,6 +61,7 @@
                         <td>{{sale.datetime}}</td>
                         <td>{{sale.food_name}}</td>
                         <td>{{sale.amount}}</td>
+                     
                         <td>
                                 <!-- Botón para mostrar el formulario de actualizar -->
                                 <button @click="editarFormulario(sale)" class="btn btn-warning"> <i class="fa fa-pencil" aria-hidden="true"></i>  </button>
@@ -70,7 +71,11 @@
                     </tr>
                 </tbody>
             </table>
+        {{sumarMonto()}}
+         <h4>Total: S/ {{monto.toFixed(2)}} </h4>
         </section>
+         
+                   
     </div>
 </template>
 
@@ -93,6 +98,7 @@
                 foods:[],
                 food:{id:'',name:'',price:'',category:''},
                 modoEditar:false,
+                monto:'',
             }
         },
         methods:{
@@ -165,6 +171,12 @@
                 var dateFormat = require('dateformat');
                 var now = new Date();
                 this.sale.datetime = dateFormat(now, "yyyy-mm-dd h:MM:ss");
+            },
+            sumarMonto: function(){
+                let sum = 0;
+                this.monto = this.sales.reduce(function (total, sale) {
+                return total + Number(sale.amount);
+                }, 0);
             }
         }
     }
