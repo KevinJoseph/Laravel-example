@@ -85,6 +85,7 @@
             this.fechaActual();
             axios.get('foods').then((response) => {
                 this.foods = response.data;
+                console.log('comida: '+response.data);
             });
             axios.get('indexsales').then((response) => {
                 this.sales = response.data;

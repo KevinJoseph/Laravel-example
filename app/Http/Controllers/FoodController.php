@@ -15,8 +15,8 @@ class FoodController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            return $food = Food::all();
-         }else{
+            return $food = Food::orderBy('name', 'ASC')->get();
+        }else{
              return view('food');
          }
     }
