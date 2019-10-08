@@ -33,6 +33,7 @@ class SaleController extends Controller
         ->join('foods', 'foods.id', '=', 'sales.food_id')
         ->select('sales.*', 'foods.name as food_name')
         ->where('datetime','like','%'.$value.'%')
+        ->orderBy('sales.datetime','ASC')
         ->get();
         return $allSales;
     }

@@ -88,7 +88,6 @@
             });
             axios.get('indexsales').then((response) => {
                 this.sales = response.data;
-                  console.log(this.sales);
             });
         },
         data() {
@@ -104,11 +103,9 @@
         methods:{
             addSale: function() {
                 const params = this.sale; 
-                console.log(params);
                 axios.post('sales', params)
                 .then((response) => {
                 this.sales.push(response.data);
-                console.log(this.sales);
                 axios.get('indexsales').then((response) => {
                 this.sales = response.data;
                 });
@@ -127,10 +124,6 @@
             },
             editSale: function (sale) {
                 const params = {datetime: sale.datetime, food_id: sale.food_id, amount: sale.amount};
-                console.log(this.sale.datetime);
-                console.log(this.sale.food_id);
-                console.log(this.sale.amount);
-                console.log("id: "+this.sale.id);
                 axios.put(`sales/${sale.id}`, params)
                     .then(response => {
                          this.modoEditar = false;

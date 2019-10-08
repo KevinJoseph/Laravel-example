@@ -16,7 +16,7 @@ class InvestmentController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-            return $investment = Investment::all();
+            return $investment = Investment::orderBy('date','ASC')->get();
          }else{
              return view('investment');
          }
