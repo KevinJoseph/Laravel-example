@@ -163,7 +163,7 @@
             fechaActual: function() {
                 var dateFormat = require('dateformat');
                 var now = new Date();
-                this.sale.datetime = dateFormat(now, "yyyy-mm-dd h:MM:ss");
+                this.sale.datetime = dateFormat(now, "yyyy-mm-dd H:MM:ss");
             },
             sumarMonto: function(){
                 let sum = 0;
