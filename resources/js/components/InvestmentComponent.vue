@@ -70,7 +70,8 @@
         mounted() {
                axios.get('investments').then((response) => {
                 this.investments = response.data;
-            });
+                });
+                this.fechaActual();
         },
         data() {
             return{
@@ -122,7 +123,12 @@
             cancelarEdicion: function () {
                 this.modoEditar = false;
                 this.investment = {total:''};
-            }
+            },
+            fechaActual: function() {
+                var dateFormat = require('dateformat');
+                var now = new Date();
+                this.investment.date = dateFormat(now, "yyyy-mm-dd");
+            },
         }
     }
 </script>

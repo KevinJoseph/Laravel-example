@@ -5,9 +5,10 @@
 
                 <form @submit.prevent="searchDate"> 
                 <div class="form-group">
-                    <label for="Total" >Fecha y Hora</label>
-                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" v-model="fecha">
+                    <label for="example-date-input">Fecha</label>
+                    <input class="form-control" type="date" id="example-date-input" data-date-format="YYYY-MM-DD" v-model="fecha">
                 </div>
+          
                 <button class="btn btn-primary" type="submit">Buscar</button>   
                 </form>
         </section>
@@ -43,7 +44,7 @@
                 <form @submit.prevent="ganancia"> 
                 <div class="form-group">
                     <label for="Total" >Indica Fecha</label>
-                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" v-model="fecha2">
+                    <input class="form-control" type="date" id="example-date-input" v-model="fecha2">
                 </div>
                 <button class="btn btn-success" type="submit">Buscar</button>   
                 </form>
@@ -87,7 +88,8 @@
             fechaActual: function() {
                 var dateFormat = require('dateformat');
                 var now = new Date();
-                this.sale.datetime = dateFormat(now, "yyyy-mm-dd h:MM:ss");
+                this.fecha = dateFormat(now, "yyyy-mm-dd");
+                this.fecha2= dateFormat(now, "yyyy-mm-dd");
             }
         }
     }
