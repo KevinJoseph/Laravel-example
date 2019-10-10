@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(sale, index) in sales" v-bind:key="index">
-                        <td>{{sale.id }}</td>
+                        <td>{{index+1}}</td>
                         <td>{{sale.datetime}}</td>
                         <td>{{sale.food_id}}</td>
                         <td>{{sale.amount}}</td>
