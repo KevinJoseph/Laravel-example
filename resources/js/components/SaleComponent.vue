@@ -48,7 +48,7 @@
             <table class="table table-responsive">
                 <thead>
                     <tr>
-                        <th scope="col">Cod</th>
+                        <th scope="col">#</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Plato</th>
                         <th scope="col">Monto</th>
@@ -57,7 +57,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(sale, index) in sales" v-bind:key="index">
-                        <td>{{sale.id }}</td>
+                        <td>{{index+1}}</td>
                         <td>{{sale.datetime}}</td>
                         <td>{{sale.food_name}}</td>
                         <td>{{sale.amount}}</td>

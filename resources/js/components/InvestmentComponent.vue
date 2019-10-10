@@ -41,7 +41,7 @@
             <table class="table table-responsive">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">#</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Total</th>
                         <th scope="col">Acciones</th>         
@@ -49,7 +49,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(investment, index) in investments" v-bind:key="index">
-                        <td>{{investment.id }}</td>
+                        <td>{{index+1 }}</td>
                         <td>{{investment.date}}</td>
                         <td>{{investment.total}}</td>
                         <td>

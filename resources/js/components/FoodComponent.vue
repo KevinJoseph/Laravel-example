@@ -48,7 +48,7 @@
             <table class="table table-responsive">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">#</th>
                         <th scope="col">Nombre</th>  
                         <th scope="col">Precio</th>
                         <th scope="col">Categoria</th>
@@ -57,7 +57,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(food, index) in foods" v-bind:key="index">
-                        <td>{{food.id }}</td>
+                        <td>{{index+1}}</td>
                         <td>{{food.name}}</td>
                         <td>{{food.price}}</td>
                         <td>{{food.category}}</td>
