@@ -6,7 +6,7 @@
                 <!--h3>Editar Venta</h3-->
                 <div class="form-group">
                     <label for="Total">Fecha y Hora</label>
-                    <input type="text" class="form-control" placeholder="dd/mm/yyy hh:mm:ss" v-model="sale.datetime">
+                    <input type="text" class="form-control" placeholder="dd/mm/yyy HH:mm:ss" v-model="sale.datetime">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Platos</label>
@@ -25,7 +25,7 @@
                 <form @submit.prevent="addSale" v-else> 
                 <div class="form-group">
                     <label for="Total" >Fecha y Hora</label>
-                    <input type="text" class="form-control" placeholder="dd/mm/yyy hh:mm:ss" v-model="sale.datetime">
+                    <input type="text" class="form-control" placeholder="dd/mm/yyy HH:mm:ss" v-model="sale.datetime">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Platos</label>
@@ -163,7 +163,7 @@
             fechaActual: function() {
                 var dateFormat = require('dateformat');
                 var now = new Date();
-                this.sale.datetime = dateFormat(now, "yyyy-mm-dd H:MM:ss");
+                this.sale.datetime = dateFormat(now, "yyyy-mm-dd HH:MM:ss");
             },
             sumarMonto: function(){
                 let sum = 0;
