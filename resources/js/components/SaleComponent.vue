@@ -60,7 +60,7 @@
                         <td>{{index+1}}</td>
                         <td>{{sale.datetime}}</td>
                         <td>{{sale.food_name}}</td>
-                        <td>{{sale.amount}}</td>
+                        <td>{{sale.amount.toFixed(2)}}</td>
                      
                         <td>
                                 <!-- Botón para mostrar el formulario de actualizar -->
@@ -113,7 +113,7 @@
                 this.sale = {datetime:'',amount:'',food_id:''};     
                 var dateFormat = require('dateformat');
                 var now = new Date();
-                this.sale.datetime = dateFormat(now, "yyyy-mm-dd h:MM:ss"); 
+                this.sale.datetime = dateFormat(now, "yyyy-mm-dd HH:MM:ss"); 
             },
             editarFormulario(sale){
                 this.sale.id = sale.id;
@@ -143,7 +143,7 @@
                         this.sales.splice(index,1)
                         var dateFormat = require('dateformat');
                         var now = new Date();
-                        this.sale.datetime = dateFormat(now, "yyyy-mm-dd h:MM:ss");
+                        this.sale.datetime = dateFormat(now, "yyyy-mm-dd HH:MM:ss");
                     });
                 }
             },
@@ -152,7 +152,7 @@
                 this.sale = {food_id:'',amount:''};
                 var dateFormat = require('dateformat');
                 var now = new Date();
-                this.sale.datetime = dateFormat(now, "yyyy-mm-dd h:MM:ss");
+                this.sale.datetime = dateFormat(now, "yyyy-mm-dd HH:MM:ss");
             },
             addPrice: function(id) {
                 axios.get(`foods/${id}`).then((response) => {
