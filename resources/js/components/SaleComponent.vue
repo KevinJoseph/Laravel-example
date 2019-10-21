@@ -108,12 +108,13 @@
                 this.sales.push(response.data);
                 axios.get('indexsales').then((response) => {
                 this.sales = response.data;
+                this.fechaActual();
                 });
                 });    
-                this.sale = {datetime:'',amount:'',food_id:''};     
-                var dateFormat = require('dateformat');
-                var now = new Date();
-                this.sale.datetime = dateFormat(now, "yyyy-mm-dd HH:MM:ss"); 
+                //this.sale = {datetime:'',amount:'',food_id:''};     
+                //var dateFormat = require('dateformat');
+                //var now = new Date();
+                //this.sale.datetime = dateFormat(now, "yyyy-mm-dd HH:MM:ss"); 
             },
             editarFormulario(sale){
                 this.sale.id = sale.id;
