@@ -24,8 +24,8 @@
             </form>
                 <form @submit.prevent="addSale" v-else> 
                 <div class="form-group">
-                    <label for="Total" >Fecha y Hora</label>
-                    <input type="text" class="form-control" placeholder="dd/mm/yyy HH:mm:ss" v-model="sale.datetime">
+                    <label for="Total" >Fecha y Horas</label>
+                    <input type="text" class="form-control" placeholder="dd/mm/yyy HH:mm:ss" v-model="getfecha">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Platos</label>
@@ -89,6 +89,12 @@
             axios.get('indexsales').then((response) => {
                 this.sales = response.data;
             });
+            /*setInterval(function(){
+                var dateFormat = require('dateformat');
+                var now = new Date();
+                this.fec = dateFormat(now, "yyyy-mm-dd HH:MM:ss");
+                console.log(this.fec+"");
+            },1000);*/
         },
         data() {
             return{
@@ -98,7 +104,15 @@
                 food:{id:'',name:'',price:'',category:''},
                 modoEditar:false,
                 monto:'',
+                fec:0
             }
+        },
+        created(){
+            var self = this;
+            setInterval(function(){
+                var dateFormat = require('dateformat');
+                self.fechaActual();
+            },1000);
         },
         methods:{
             addSale: function() {
@@ -171,6 +185,11 @@
                 this.monto = this.sales.reduce(function (total, sale) {
                 return total + Number(sale.amount);
                 }, 0);
+            }
+        },
+        computed:{
+            getfecha(){
+                return this.sale.datetime;
             }
         }
     }

@@ -25,7 +25,7 @@ class ReportController extends Controller
         $amount = DB::table('sales')->where('datetime','like','%'.$fecha.'%')->sum('amount');
         $a =$total->total;
         $a = (float) $a;
-        return $a-$amount;
+        return $amount-$a;
     }
 
     /**
